@@ -1,0 +1,53 @@
+:root{
+  --bg:#fff3e0; --panel:#fffdf8; --ink:#231a3d; --accent:#ff4d6d; --accent2:#00c2d1; --accent3:#ffb703;
+  --purple:#7b2ff7; --line:#231a3d; --muted:#7a6f95;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){--bg:#16112b;--panel:#231a3d;--ink:#fdf2ff;--muted:#b7a9d9;--line:#fdf2ff;}
+}
+:root[data-theme="dark"]{--bg:#16112b;--panel:#231a3d;--ink:#fdf2ff;--muted:#b7a9d9;--line:#fdf2ff;}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0;color:var(--ink);font-family:'Baloo 2',system-ui,sans-serif;
+  padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);
+  background:
+    radial-gradient(circle at 8% 12%, rgba(255,183,3,.35) 0, transparent 40%),
+    radial-gradient(circle at 92% 18%, rgba(0,194,209,.3) 0, transparent 42%),
+    radial-gradient(circle at 50% 95%, rgba(123,47,247,.25) 0, transparent 45%),
+    var(--bg);
+  background-attachment:fixed}
+.wrap{max-width:760px;margin:0 auto;padding:28px 16px 60px}
+h1{font-family:'Bangers',cursive;font-size:3.4rem;letter-spacing:2px;margin:0 0 2px;line-height:1;
+  background:linear-gradient(90deg,var(--accent),var(--accent3) 45%,var(--accent2) 75%,var(--purple));
+  -webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;
+  text-shadow:2px 2px 0 rgba(0,0,0,.08);transform:rotate(-1.5deg);display:inline-block}
+.sub{color:var(--muted);margin:2px 0 26px;font-size:1rem;font-weight:600}
+.card{background:var(--panel);border:3px solid var(--line);border-radius:18px;padding:22px;
+  box-shadow:6px 6px 0 var(--purple);margin-bottom:24px;position:relative}
+label{display:block;font-weight:700;font-size:.85rem;margin:14px 0 5px;color:var(--purple)}
+input,select,textarea{width:100%;padding:10px 12px;border:2px solid var(--muted);border-radius:10px;
+  background:var(--bg);color:var(--ink);font-size:.95rem;font-family:inherit;transition:border-color .15s,box-shadow .15s}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--accent2);box-shadow:0 0 0 3px rgba(0,194,209,.25)}
+textarea{resize:vertical;min-height:56px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+button{cursor:pointer;font-family:'Bangers',cursive;letter-spacing:1px;font-weight:400;border:3px solid var(--line);
+  border-radius:12px;padding:12px 22px;color:#fff;font-size:1.15rem;
+  background:linear-gradient(135deg,var(--accent),#ff8a3d);box-shadow:4px 4px 0 var(--line);
+  transition:transform .12s,box-shadow .12s}
+button:hover{transform:translate(-1px,-2px);box-shadow:6px 6px 0 var(--line)}
+button:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--line)}
+button.secondary{background:linear-gradient(135deg,var(--accent2),var(--purple))}
+button:disabled{opacity:.45;cursor:default;transform:none}
+.actions{display:flex;gap:12px;margin-top:18px;flex-wrap:wrap}
+.status{color:var(--purple);font-weight:700;font-size:.9rem;margin-top:10px;min-height:1.2em}
+.panel{background:var(--panel);border:3px solid var(--line);border-radius:16px;margin-bottom:26px;overflow:hidden;
+  box-shadow:6px 6px 0 var(--accent2);transform:rotate(-.4deg)}
+.panel:nth-child(even){transform:rotate(.4deg);box-shadow:6px 6px 0 var(--accent3)}
+.panel svg{width:100%;height:auto;display:block;background:#eee}
+.panel-body{padding:16px 18px}
+.panel-title{font-family:'Bangers',cursive;letter-spacing:1px;font-size:1.4rem;margin:0 0 6px;color:var(--accent)}
+.scene{font-style:italic;color:var(--muted);font-size:.9rem;margin:0 0 10px}
+.narration{margin:0 0 6px;line-height:1.45;font-weight:600}
+.caption{font-size:.82rem;color:var(--muted)}
+.hidden{display:none}
+.success{text-align:center;padding:44px 20px}
+.success h2{font-family:'Bangers',cursive;font-size:2.2rem;color:var(--accent2);letter-spacing:1px}
